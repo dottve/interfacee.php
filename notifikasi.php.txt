@@ -1,0 +1,31 @@
+<?php
+interface Notifikasi {
+    public function kirim();
+}
+
+class Email implements Notifikasi {
+    public function kirim() {
+        echo "Notifikasi Email berhasil dikirim.\n";
+    }
+}
+
+class WhatsApp implements Notifikasi {
+    public function kirim() {
+        echo "Notifikasi WhatsApp berhasil dikirim.\n";
+    }
+}
+
+class SMS implements Notifikasi {
+    public function kirim() {
+        echo "Notifikasi SMS berhasil dikirim.\n";
+    }
+}
+
+$email = new Email();
+$wa = new WhatsApp();
+$sms = new SMS();
+
+$email->kirim();
+$wa->kirim();
+$sms->kirim();
+?>
